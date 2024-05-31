@@ -5,6 +5,9 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Install dependencies
+RUN apt-get update \
+    && apt-get install -y libpq-dev gcc python3-dev musl-dev 
+
 COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip --no-cache-dir \
     && pip install -r requirements.txt --no-cache-dir \
