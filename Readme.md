@@ -30,6 +30,10 @@ coverage report
 coverage html
 ```
 
+## Api docs
+
+Go to `/swagger/` to see api documentation
+
 ## Zadanie
 
 Cel: Stworzenie prostej aplikacji CRUD w Django, która umożliwia zarządzanie
