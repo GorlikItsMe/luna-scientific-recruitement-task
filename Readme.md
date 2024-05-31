@@ -21,22 +21,22 @@ systemem hydroponicznym.
 
 #### Endpoint do zarządzania systemem hydroponicznym
 
-- [ ] Umożliwić użytkownikowi tworzenie, odczytywanie, aktualizowanie, i
+- [x] Umożliwić użytkownikowi tworzenie, odczytywanie, aktualizowanie, i
 usuwanie (CRUD) informacji o jego systemach hydroponicznych.
-- [ ] Każdy system hydroponiczny powinien być przypisany do użytkownika
+- [x] Każdy system hydroponiczny powinien być przypisany do użytkownika
 (owner).
-- [ ] Powinna zostać dodana walidacja danych zgodna z zaleceniamy
+- [x] Powinna zostać dodana walidacja danych zgodna z zaleceniamy
 Django REST Framework.
 
 #### Endpoint do zarządzania pomiarami
 
-- [ ] Umożliwić wysyłanie danych z czujników (pH, temperatura wody, TDS)
+- [x] Umożliwić wysyłanie danych z czujników (pH, temperatura wody, TDS)
 do istniejącego systemu hydroponicznego.
-- [ ] Pomiary powinny być zapisywane w bazie danych.
+- [x] Pomiary powinny być zapisywane w bazie danych.
 
 #### Odczytywanie informacji o systemach i pomiarach
 
-- [ ] Użytkownik powinien mieć możliwość otrzymania listy swoich
+- [x] Użytkownik powinien mieć możliwość otrzymania listy swoich
 systemów hydroponicznych.
 - [ ] Wszelkie metody pobierania danych powinny dawać możliwość
 filtrowania danych (przedział czasowy, przedział wartości).
