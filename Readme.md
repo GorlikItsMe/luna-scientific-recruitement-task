@@ -20,6 +20,16 @@ python manage.py runserver
 docker compose up
 ```
 
+## Tests
+
+```bash
+python manage.py test
+
+coverage run --source='.' manage.py test
+coverage report
+coverage html
+```
+
 ## Zadanie
 
 Cel: Stworzenie prostej aplikacji CRUD w Django, która umożliwia zarządzanie
@@ -67,7 +77,7 @@ Framework.
 danych.
 - [x] Kod powinien być zgodny z PEP8.
 - [x] Dokumentacja API.
-- [ ] Dokumentacja kodu źródłowego
+- [x] Dokumentacja kodu źródłowego
 - [x] README.md z instrukcjami dotyczącymi instalacji, konfiguracji i uruchomienia
 aplikacji.
 
@@ -75,7 +85,7 @@ aplikacji.
 
 - [x] Projekt powinien być dostępny w publicznym repozytorium na platformie
 GitHub lub GitLab.
-- [ ] Mile widziane użycie dobrych praktyk programistycznych, testy jednostkowe i
+- [x] Mile widziane użycie dobrych praktyk programistycznych, testy jednostkowe i
 konfiguracja dockerowa/k8s.
 - [x] Oceniane będą: czystość kodu, struktura projektu, stosowanie się do zasad
 SOLID oraz efektywność rozwiązań.

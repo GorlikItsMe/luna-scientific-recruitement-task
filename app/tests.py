@@ -127,3 +127,36 @@ class TestHydroponicSystemViewSet(TestCase):
             'tds': 1000.0
         })
         self.assertEqual(r.status_code, 400)
+
+    def test_can_see_only_own_measurements(self):
+        system = HydroponicSystem.objects.create(
+            name='Test System',
+            description='Test Description',
+            owner=self.user
+        )
+        Measurement.objects.create(
+            hydroponic_system=system,
+            ph=5.0,
+            water_temp=25.0,
+            tds=1000.0
+        )
+
+        system2 = HydroponicSystem.objects.create(
+            name='Test System 2',
+            description='Test Description 2',
+            owner=self.user2
+        )
+        Measurement.objects.create(
+            hydroponic_system=system2,
+            ph=5.0,
+            water_temp=25.0,
+            tds=1000.0
+        )
+
+        r = self.client.get('/api/v1/measurement/')
+        data = r.data['results']
+        self.assertEqual(len(data), 1)
+
+        r = self.client2.get('/api/v1/measurement/')
+        data = r.data['results']
+        self.assertEqual(len(data), 1)
