@@ -13,7 +13,7 @@ class HydroponicSystem(models.Model):
         return self.name
 
     def last_10_measurements(self):
-        return self.measurements.order_by('created_at')[:10]
+        return self.measurements.order_by('-created_at')[:10]
 
 
 class Measurement(models.Model):
