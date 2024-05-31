@@ -67,7 +67,7 @@ paginację danych.
 
 #### Endpoint logowania użytkownika
 
-- [ ] System autoryzacji i uwierzytelniania użytkowników.
+- [x] System autoryzacji i uwierzytelniania użytkowników.
 
 ### Wymagania techniczne
 
