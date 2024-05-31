@@ -38,13 +38,13 @@ do istniejącego systemu hydroponicznego.
 
 - [x] Użytkownik powinien mieć możliwość otrzymania listy swoich
 systemów hydroponicznych.
-- [ ] Wszelkie metody pobierania danych powinny dawać możliwość
+- [x] Wszelkie metody pobierania danych powinny dawać możliwość
 filtrowania danych (przedział czasowy, przedział wartości).
-- [ ] Metody te powinny też dawać opcje sortowania wyników po wybranych
+- [x] Metody te powinny też dawać opcje sortowania wyników po wybranych
 parametrach.
-- [ ] W metodach, gdzie będzie to potrzebne należy zaimplementować
+- [x] W metodach, gdzie będzie to potrzebne należy zaimplementować
 paginację danych.
-- [ ] Możliwość pobrania szczegółów konkretnego systemu z informacją o
+- [x] Możliwość pobrania szczegółów konkretnego systemu z informacją o
 10 ostatnich pomiarach.
 
 #### Endpoint logowania użytkownika
