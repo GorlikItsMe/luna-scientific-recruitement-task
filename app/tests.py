@@ -50,7 +50,7 @@ class TestHydroponicSystemViewSet(TestCase):
     def test_list_hydroponic_systems_unauthenticated(self):
         self.client.logout()
         r = self.client.get('/api/v1/hydroponicsystem/')
-        self.assertEqual(r.status_code, 403)
+        self.assertEqual(r.status_code, 401)
 
     def test_can_see_only_own_systems(self):
         self.client.post('/api/v1/hydroponicsystem/', {
