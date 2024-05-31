@@ -1,0 +1,12 @@
+[flake8]
+max-line-length = 92
+exclude =
+    .git
+    __pycache__
+    migrations
+    manage.py
+    media
+    static
+    .venv
+    venv
+

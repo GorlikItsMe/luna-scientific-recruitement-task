@@ -1,0 +1,14 @@
+FROM webdevops/nginx:debian-10
+# Utils
+RUN apt-get update && apt-get install -y nano
+
+# Nginx
+ENV WEB_DOCUMENT_INDEX="index.html"
+ENV SERVICE_NGINX_CLIENT_MAX_BODY_SIZE="100m"
+
+COPY ./etc/nginx/conf.d/* /opt/docker/etc/nginx/conf.d/
+COPY ./etc/nginx/vhost.common.d/* /opt/docker/etc/nginx/vhost.common.d/
+
+# I dont know but this dont work
+HEALTHCHECK --interval=30s --timeout=5s \
+  CMD wget -qO- http://127.0.0.1/health || exit 1
