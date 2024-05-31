@@ -3,13 +3,21 @@
 ## How to install?
 
 ```bash
-# todo
+python -m venv .venv
+pip install -r requirements.txt
+cp .env.example .env
+# edit .env file and set your own values
+python manage.py migrate
 ```
 
 ## How to run?
 
 ```bash
-# todo
+python manage.py runserver
+```
+
+```bash
+docker compose up
 ```
 
 ## Zadanie
@@ -58,9 +66,9 @@ Framework.
 - [x] Użycie bazy danych PostgreSQL. Należy zoptymalizować zapytania do bazy
 danych.
 - [x] Kod powinien być zgodny z PEP8.
-- [ ] Dokumentacja API.
+- [x] Dokumentacja API.
 - [ ] Dokumentacja kodu źródłowego
-- [ ] README.md z instrukcjami dotyczącymi instalacji, konfiguracji i uruchomienia
+- [x] README.md z instrukcjami dotyczącymi instalacji, konfiguracji i uruchomienia
 aplikacji.
 
 ### Dodatkowe informacje

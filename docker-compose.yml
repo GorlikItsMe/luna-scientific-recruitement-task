@@ -1,0 +1,49 @@
+version: '3.7'
+
+services:
+  nginx:
+    build: ./docker/nginx
+    # image: ghcr.io/gorlikitsme/luna-sci-nginx:latest
+    volumes:
+      - ./static_root/:/app/static_root/
+      - ./media/:/app/media/
+    depends_on:
+      - app
+    restart: "on-failure"
+    ports:
+      - "80:80"
+    networks:
+      - inbound
+
+  app:
+    build: .
+    # image: ghcr.io/gorlikitsme/luna-sci-app:latest
+    volumes:
+      - ./static_root/:/app/static_root/
+      - ./media/:/app/media/
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    environment:
+      - DB_HOST=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=luna-scientific
+    restart: "on-failure"
+    networks:
+      - inbound
+
+  postgres:
+    image: postgres:16
+    restart: "on-failure"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: luna-scientific
+    networks:
+      - inbound
+
+networks:
+  inbound:
+    name: inbound

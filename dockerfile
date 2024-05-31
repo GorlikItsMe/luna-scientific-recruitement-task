@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Install dependencies
 RUN apt-get update \
-    && apt-get install -y libpq-dev gcc python3-dev musl-dev 
+    && apt-get install -y libpq-dev gcc python3-dev musl-dev
 
 COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip --no-cache-dir \
@@ -22,7 +22,7 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 RUN apt-get update \
-    && apt-get install -y wget
+    && apt-get install -y wget libpq-dev
 
 COPY --from=base /usr/local/lib/python3.11/site-packages/ /usr/local/lib/python3.11/site-packages/
 COPY --from=base /usr/local/bin/ /usr/local/bin/
